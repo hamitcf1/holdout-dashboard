@@ -34,16 +34,16 @@ const CONFIG = {
       { t: "Mobbin araştırması (onboarding/paywall)", d: false },
       { t: "Figma ekran tasarımları", d: false },
       { t: "Developer hesapları (Apple/Google)", d: false },
-      { t: "Supabase şemasını finalize et", d: false },
-      { t: "Design system & bileşen kütüphanesi", d: false }
+      { t: "Supabase şemasını finalize et", d: true },
+      { t: "Design system & bileşen kütüphanesi", d: true }
     ]},
     { name: "Faz 2 — MVP Geliştirme", short: "Faz 2\nMVP", start: "2026-06-30", end: "2026-08-31", mvp: true, tasks: [
-      { t: "Kullanıcı kaydı & profil", d: false },
-      { t: "Alışkanlık oluşturma", d: false },
-      { t: "1-1 duel sistemi", d: false },
-      { t: "Günlük check-in", d: false },
+      { t: "Kullanıcı kaydı & profil", d: true },
+      { t: "Alışkanlık oluşturma", d: true },
+      { t: "1-1 duel sistemi", d: true },
+      { t: "Günlük check-in", d: true },
       { t: "Push notification", d: false },
-      { t: "Deep link davet sistemi", d: false },
+      { t: "Deep link davet sistemi", d: true },
       { t: "Abonelik (RevenueCat)", d: false },
       { t: "Reklam (AdMob)", d: false }
     ]},
