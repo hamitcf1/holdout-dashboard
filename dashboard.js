@@ -44,9 +44,12 @@ const CONFIG = {
       { t: "Davet linki (GitHub Pages)", d: true },
       { t: "Navigasyon + Ana Sayfa — Faz A", d: true },
       { t: "Duel detay zengin (dots, %, laf sokma, bahis) — Faz B", d: true },
-      { t: "Leaderboard + puan — Faz C", d: false },
+      { t: "Puan + sıralama + başarım + sonuç çözümü — Faz C", d: false },
+      { t: "Düello kanıtı (fotolu check-in)", d: false },
+      { t: "Düello bitiş ekranı (ödül + paylaş + premium CTA)", d: false },
       { t: "İstatistik + Profil — Faz D", d: false },
       { t: "Push + onboarding — Faz E", d: false },
+      { t: "i18n altyapısı + TR/EN", d: false },
       { t: "Paywall + reklam (RevenueCat/AdMob)", d: false }
     ]},
     { name: "Faz 3 — Lansman & Pazarlama", short: "Faz 3\nLansman", start: "2026-08-31", end: "2026-09-30", mvp: false, tasks: [
@@ -59,8 +62,10 @@ const CONFIG = {
       { t: "İlk 100 kullanıcı kazanımı", d: false }
     ]},
     { name: "Faz 4 — MVP Sonrası", short: "Faz 4\nSonrası", start: "2026-09-30", end: "2026-12-31", mvp: false, tasks: [
-      { t: "Bireysel puan & skor", d: false },
-      { t: "Solo alışkanlık takibi", d: false },
+      { t: "Özel düello modları + cihaz entegrasyonu (adım, su)", d: false },
+      { t: "Tam solo habit tracker (tekrarlayan)", d: false },
+      { t: "Diğer diller (RU, AZ, DE, FR)", d: false },
+      { t: "Derin başarım/ödül sistemi", d: false },
       { t: "Quit / sobriety modu", d: false }
     ]}
   ]
