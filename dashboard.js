@@ -49,11 +49,14 @@ const CONFIG = {
       { t: "Push + onboarding — Faz E", d: false },
       { t: "Paywall + reklam (RevenueCat/AdMob)", d: false }
     ]},
-    { name: "Faz 3 — Lansman", short: "Faz 3\nLansman", start: "2026-08-31", end: "2026-09-30", mvp: false, tasks: [
-      { t: "App Store / Play Store submit", d: false },
-      { t: "ASO (anahtar kelime, görseller)", d: false },
-      { t: "Beta & ilk yorum kampanyası", d: false },
-      { t: "İlk kullanıcı kazanımı", d: false }
+    { name: "Faz 3 — Lansman & Pazarlama", short: "Faz 3\nLansman", start: "2026-08-31", end: "2026-09-30", mvp: false, tasks: [
+      { t: "App icon + marka varlıkları", d: false },
+      { t: "Sosyal medya hesapları + içerik planı", d: false },
+      { t: "App Store görselleri + ASO", d: false },
+      { t: "Beta (TestFlight) & ilk yorumlar", d: false },
+      { t: "Lansman post serisi + Product Hunt", d: false },
+      { t: "App Store / Play submit", d: false },
+      { t: "İlk 100 kullanıcı kazanımı", d: false }
     ]},
     { name: "Faz 4 — MVP Sonrası", short: "Faz 4\nSonrası", start: "2026-09-30", end: "2026-12-31", mvp: false, tasks: [
       { t: "Bireysel puan & skor", d: false },
