@@ -43,7 +43,7 @@ const CONFIG = {
       { t: "Check-in + realtime", d: true },
       { t: "Davet linki (GitHub Pages)", d: true },
       { t: "Navigasyon + Ana Sayfa — Faz A", d: true },
-      { t: "Duel detay zengin — Faz B", d: false },
+      { t: "Duel detay zengin (dots, %, laf sokma, bahis) — Faz B", d: true },
       { t: "Leaderboard + puan — Faz C", d: false },
       { t: "İstatistik + Profil — Faz D", d: false },
       { t: "Push + onboarding — Faz E", d: false },
