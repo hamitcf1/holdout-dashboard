@@ -38,14 +38,16 @@ const CONFIG = {
       { t: "Design system & bileşen kütüphanesi", d: true }
     ]},
     { name: "Faz 2 — MVP Geliştirme", short: "Faz 2\nMVP", start: "2026-06-30", end: "2026-08-31", mvp: true, tasks: [
-      { t: "Kullanıcı kaydı & profil", d: true },
-      { t: "Alışkanlık oluşturma", d: true },
-      { t: "1-1 duel sistemi", d: true },
-      { t: "Günlük check-in", d: true },
-      { t: "Push notification", d: false },
-      { t: "Deep link davet sistemi", d: true },
-      { t: "Abonelik (RevenueCat)", d: false },
-      { t: "Reklam (AdMob)", d: false }
+      { t: "Giriş + auth (anonim/dev)", d: true },
+      { t: "Alışkanlık + duel oluşturma", d: true },
+      { t: "Check-in + realtime", d: true },
+      { t: "Davet linki (GitHub Pages)", d: true },
+      { t: "Navigasyon + Ana Sayfa — Faz A", d: true },
+      { t: "Duel detay zengin — Faz B", d: false },
+      { t: "Leaderboard + puan — Faz C", d: false },
+      { t: "İstatistik + Profil — Faz D", d: false },
+      { t: "Push + onboarding — Faz E", d: false },
+      { t: "Paywall + reklam (RevenueCat/AdMob)", d: false }
     ]},
     { name: "Faz 3 — Lansman", short: "Faz 3\nLansman", start: "2026-08-31", end: "2026-09-30", mvp: false, tasks: [
       { t: "App Store / Play Store submit", d: false },
