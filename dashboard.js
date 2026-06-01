@@ -47,7 +47,7 @@ const CONFIG = {
       { t: "Puan + sıralama + başarım + sonuç çözümü — Faz C", d: true },
       { t: "Düello kanıtı (foto + saat damgası + not, Storage)", d: false },
       { t: "Düello bitiş ekranı (ödül + paylaş + premium CTA)", d: true },
-      { t: "İstatistik + Profil — Faz D", d: false },
+      { t: "İstatistik + Profil — Faz D", d: true },
       { t: "Push + onboarding — Faz E", d: false },
       { t: "i18n altyapısı + TR/EN", d: false },
       { t: "Paywall + reklam (RevenueCat/AdMob)", d: false }
