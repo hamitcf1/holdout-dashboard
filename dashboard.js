@@ -52,7 +52,7 @@ const CONFIG = {
       { t: "Push bildirimleri (local hatırlatma) — Faz E", d: true },
       { t: "Premium UX: paywall + entitlement + grace + reklam kapısı (mock satın alma)", d: true },
       { t: "i18n: tüm ekranlar çevrildi (TR/EN ✅); RU/AZ/DE/FR tam çeviri kaldı", d: false },
-      { t: "Solo habit tracker (tekrarlayan, 'Bugün' bölümü)", d: false },
+      { t: "Solo habit tracker (tekrarlayan, 'Bugün' bölümü)", d: true },
       { t: "Bırakma/sobriety modu (temiz sayaç + relapse + kilometre taşı)", d: false }
     ]},
     { name: "Faz 3 — Yayın & Lansman", short: "Faz 3\nYayın", start: "2026-08-31", end: "2026-09-30", mvp: false, tasks: [
