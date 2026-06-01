@@ -46,7 +46,7 @@ const CONFIG = {
       { t: "Duel detay zengin (dots, %, laf sokma, bahis) — Faz B", d: true },
       { t: "Puan + sıralama + başarım + sonuç çözümü — Faz C", d: true },
       { t: "Düello kanıtı (foto + saat damgası + not, Storage)", d: false },
-      { t: "Düello bitiş ekranı (ödül + paylaş + premium CTA)", d: false },
+      { t: "Düello bitiş ekranı (ödül + paylaş + premium CTA)", d: true },
       { t: "İstatistik + Profil — Faz D", d: false },
       { t: "Push + onboarding — Faz E", d: false },
       { t: "i18n altyapısı + TR/EN", d: false },
@@ -62,6 +62,7 @@ const CONFIG = {
       { t: "İlk 100 kullanıcı kazanımı", d: false }
     ]},
     { name: "Faz 4 — MVP Sonrası", short: "Faz 4\nSonrası", start: "2026-09-30", end: "2026-12-31", mvp: false, tasks: [
+      { t: "Uygulama kilidi (Screen Time, iOS) 🚀", d: false },
       { t: "Özel düello modları + cihaz entegrasyonu (adım, su)", d: false },
       { t: "Tam solo habit tracker (tekrarlayan)", d: false },
       { t: "Diğer diller (RU, AZ, DE, FR)", d: false },
