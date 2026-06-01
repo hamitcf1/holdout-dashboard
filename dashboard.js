@@ -48,7 +48,8 @@ const CONFIG = {
       { t: "Düello kanıtı (foto + saat damgası + not, Storage)", d: true },
       { t: "Düello bitiş ekranı (ödül + paylaş + premium CTA)", d: true },
       { t: "İstatistik + Profil — Faz D", d: true },
-      { t: "Push + onboarding — Faz E", d: false },
+      { t: "Onboarding akışı — Faz E", d: true },
+      { t: "Push bildirimleri — Faz E", d: false },
       { t: "i18n altyapısı + TR/EN", d: false },
       { t: "Paywall + reklam (RevenueCat/AdMob)", d: false }
     ]},
