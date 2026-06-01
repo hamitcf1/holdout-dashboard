@@ -51,7 +51,7 @@ const CONFIG = {
       { t: "Onboarding akışı — Faz E", d: true },
       { t: "Push bildirimleri (local hatırlatma) — Faz E", d: true },
       { t: "Premium UX: paywall + entitlement + grace + reklam kapısı (mock satın alma)", d: true },
-      { t: "i18n altyapısı + 6 dil (TR/EN temel ✅; RU/AZ/DE/FR + tüm ekran çevirisi sürüyor)", d: false },
+      { t: "i18n: tüm ekranlar çevrildi (TR/EN ✅); RU/AZ/DE/FR tam çeviri kaldı", d: false },
       { t: "Solo habit tracker (tekrarlayan, 'Bugün' bölümü)", d: false },
       { t: "Bırakma/sobriety modu (temiz sayaç + relapse + kilometre taşı)", d: false }
     ]},
