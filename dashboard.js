@@ -45,7 +45,7 @@ const CONFIG = {
       { t: "Navigasyon + Ana Sayfa — Faz A", d: true },
       { t: "Duel detay zengin (dots, %, laf sokma, bahis) — Faz B", d: true },
       { t: "Puan + sıralama + başarım + sonuç çözümü — Faz C", d: true },
-      { t: "Düello kanıtı (foto + saat damgası + not, Storage)", d: false },
+      { t: "Düello kanıtı (foto + saat damgası + not, Storage)", d: true },
       { t: "Düello bitiş ekranı (ödül + paylaş + premium CTA)", d: true },
       { t: "İstatistik + Profil — Faz D", d: true },
       { t: "Push + onboarding — Faz E", d: false },
