@@ -50,17 +50,20 @@ const CONFIG = {
       { t: "İstatistik + Profil — Faz D", d: true },
       { t: "Onboarding akışı — Faz E", d: true },
       { t: "Push bildirimleri (local hatırlatma) — Faz E", d: true },
-      { t: "i18n altyapısı + TR/EN", d: false },
-      { t: "Paywall + reklam (RevenueCat/AdMob)", d: false }
+      { t: "Premium UX: paywall + entitlement + grace + reklam kapısı (mock satın alma)", d: true },
+      { t: "i18n altyapısı + TR/EN", d: false }
     ]},
-    { name: "Faz 3 — Lansman & Pazarlama", short: "Faz 3\nLansman", start: "2026-08-31", end: "2026-09-30", mvp: false, tasks: [
-      { t: "App icon + marka varlıkları", d: false },
-      { t: "Sosyal medya hesapları + içerik planı", d: false },
-      { t: "App Store görselleri + ASO", d: false },
-      { t: "Beta (TestFlight) & ilk yorumlar", d: false },
-      { t: "Lansman post serisi + Product Hunt", d: false },
-      { t: "App Store / Play submit", d: false },
-      { t: "İlk 100 kullanıcı kazanımı", d: false }
+    { name: "Faz 3 — Yayın & Lansman", short: "Faz 3\nYayın", start: "2026-08-31", end: "2026-09-30", mvp: false, tasks: [
+      { t: "🔴 FK/profil giriş bug'ı + tüm migration'lar (prod Supabase)", d: false },
+      { t: "App icon + marka varlıkları", d: true },
+      { t: "RevenueCat (gerçek ödeme) + webhook → Supabase", d: false },
+      { t: "AdMob (gerçek reklam) + ATT / consent", d: false },
+      { t: "Apple/Google giriş + hesap silme (Apple zorunlu)", d: false },
+      { t: "EAS prod build + Apple/Google developer hesapları", d: false },
+      { t: "Remote push (APNs/FCM) + deep link (Universal/App Links)", d: false },
+      { t: "Store görselleri + ASO + gizlilik etiketi/Data Safety + EULA", d: false },
+      { t: "Beta (TestFlight / Play internal) → submit", d: false },
+      { t: "Lansman post serisi + Product Hunt → ilk 100 kullanıcı", d: false }
     ]},
     { name: "Faz 4 — MVP Sonrası", short: "Faz 4\nSonrası", start: "2026-09-30", end: "2026-12-31", mvp: false, tasks: [
       { t: "Uygulama kilidi (Screen Time, iOS) 🚀", d: false },
@@ -69,7 +72,8 @@ const CONFIG = {
       { t: "Diğer diller (RU, AZ, DE, FR)", d: false },
       { t: "Derin başarım/ödül sistemi", d: false },
       { t: "Avatar (emoji bedava / foto premium)", d: true },
-      { t: "Sosyal feed (arkadaş aktivite akışı)", d: false },
+      { t: "Sosyal feed (arkadaş aktivite akışı) — önizleme", d: true },
+      { t: "Adım & su (health_logs) — önizleme; gerçek HealthKit sonra", d: true },
       { t: "Quit / sobriety modu", d: false }
     ]}
   ]
