@@ -49,7 +49,7 @@ const CONFIG = {
       { t: "Düello bitiş ekranı (ödül + paylaş + premium CTA)", d: true },
       { t: "İstatistik + Profil — Faz D", d: true },
       { t: "Onboarding akışı — Faz E", d: true },
-      { t: "Push bildirimleri — Faz E", d: false },
+      { t: "Push bildirimleri (local hatırlatma) — Faz E", d: true },
       { t: "i18n altyapısı + TR/EN", d: false },
       { t: "Paywall + reklam (RevenueCat/AdMob)", d: false }
     ]},
@@ -68,7 +68,7 @@ const CONFIG = {
       { t: "Tam solo habit tracker (tekrarlayan)", d: false },
       { t: "Diğer diller (RU, AZ, DE, FR)", d: false },
       { t: "Derin başarım/ödül sistemi", d: false },
-      { t: "Avatar (emoji bedava / foto premium)", d: false },
+      { t: "Avatar (emoji bedava / foto premium)", d: true },
       { t: "Sosyal feed (arkadaş aktivite akışı)", d: false },
       { t: "Quit / sobriety modu", d: false }
     ]}
