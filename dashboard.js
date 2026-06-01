@@ -51,7 +51,9 @@ const CONFIG = {
       { t: "Onboarding akışı — Faz E", d: true },
       { t: "Push bildirimleri (local hatırlatma) — Faz E", d: true },
       { t: "Premium UX: paywall + entitlement + grace + reklam kapısı (mock satın alma)", d: true },
-      { t: "i18n altyapısı + TR/EN", d: false }
+      { t: "i18n altyapısı + 6 dil (TR/EN temel ✅; RU/AZ/DE/FR + tüm ekran çevirisi sürüyor)", d: false },
+      { t: "Solo habit tracker (tekrarlayan, 'Bugün' bölümü)", d: false },
+      { t: "Bırakma/sobriety modu (temiz sayaç + relapse + kilometre taşı)", d: false }
     ]},
     { name: "Faz 3 — Yayın & Lansman", short: "Faz 3\nYayın", start: "2026-08-31", end: "2026-09-30", mvp: false, tasks: [
       { t: "🔴 FK/profil giriş bug'ı + tüm migration'lar (prod Supabase)", d: false },
@@ -68,13 +70,10 @@ const CONFIG = {
     { name: "Faz 4 — MVP Sonrası", short: "Faz 4\nSonrası", start: "2026-09-30", end: "2026-12-31", mvp: false, tasks: [
       { t: "Uygulama kilidi (Screen Time, iOS) 🚀", d: false },
       { t: "Sayısal challenge modları (su/adım/tekrar, bahisli) ✅ — cihaz senkronu (HealthKit/Health Connect) kaldı", d: false },
-      { t: "Tam solo habit tracker (tekrarlayan)", d: false },
-      { t: "Diğer diller (RU, AZ, DE, FR)", d: false },
       { t: "Derin başarım/ödül sistemi", d: false },
       { t: "Avatar (emoji bedava / foto premium)", d: true },
       { t: "Sosyal & Lig (akış + lig birleşik, bedava; podyum/tier/beğeni)", d: true },
-      { t: "Challenge takip (manuel log bedava); cihaz senkronu premium → HealthKit kaldı", d: true },
-      { t: "Quit / sobriety modu", d: false }
+      { t: "Challenge takip (manuel log bedava); cihaz senkronu premium → HealthKit kaldı", d: true }
     ]}
   ]
 };
