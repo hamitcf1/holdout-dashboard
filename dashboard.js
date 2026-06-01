@@ -67,13 +67,13 @@ const CONFIG = {
     ]},
     { name: "Faz 4 — MVP Sonrası", short: "Faz 4\nSonrası", start: "2026-09-30", end: "2026-12-31", mvp: false, tasks: [
       { t: "Uygulama kilidi (Screen Time, iOS) 🚀", d: false },
-      { t: "Özel düello modları + cihaz entegrasyonu (adım, su)", d: false },
+      { t: "Sayısal challenge modları (su/adım/tekrar, bahisli) ✅ — cihaz senkronu (HealthKit/Health Connect) kaldı", d: false },
       { t: "Tam solo habit tracker (tekrarlayan)", d: false },
       { t: "Diğer diller (RU, AZ, DE, FR)", d: false },
       { t: "Derin başarım/ödül sistemi", d: false },
       { t: "Avatar (emoji bedava / foto premium)", d: true },
-      { t: "Sosyal feed (arkadaş aktivite akışı) — önizleme", d: true },
-      { t: "Adım & su (health_logs) — önizleme; gerçek HealthKit sonra", d: true },
+      { t: "Sosyal & Lig (akış + lig birleşik, bedava; podyum/tier/beğeni)", d: true },
+      { t: "Challenge takip (manuel log bedava); cihaz senkronu premium → HealthKit kaldı", d: true },
       { t: "Quit / sobriety modu", d: false }
     ]}
   ]
