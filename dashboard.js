@@ -56,7 +56,7 @@ const CONFIG = {
     { name: "Faz 3 — Yayın & Lansman", short: "Faz 3\nYayın", start: "2026-08-31", end: "2026-09-30", mvp: false, tasks: [
       { t: "🔴 FK/profil giriş bug'ı + tüm migration'lar (prod Supabase)", d: false },
       { t: "App icon + marka varlıkları", d: true },
-      { t: "RevenueCat (gerçek ödeme) + webhook → Supabase", d: false },
+      { t: "RevenueCat gerçek ödeme (iskelet ✅: purchases.ts + webhook) → SDK+hesap kaldı", d: false },
       { t: "AdMob (gerçek reklam) + ATT / consent", d: false },
       { t: "Apple/Google giriş + hesap silme (Apple zorunlu)", d: false },
       { t: "EAS prod build + Apple/Google developer hesapları", d: false },
