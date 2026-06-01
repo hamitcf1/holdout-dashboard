@@ -68,6 +68,8 @@ const CONFIG = {
       { t: "Tam solo habit tracker (tekrarlayan)", d: false },
       { t: "Diğer diller (RU, AZ, DE, FR)", d: false },
       { t: "Derin başarım/ödül sistemi", d: false },
+      { t: "Avatar (emoji bedava / foto premium)", d: false },
+      { t: "Sosyal feed (arkadaş aktivite akışı)", d: false },
       { t: "Quit / sobriety modu", d: false }
     ]}
   ]
