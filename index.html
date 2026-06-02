@@ -9,11 +9,13 @@
   <meta name="theme-color" content="#080810" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="dashboard.css" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%93%8A%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
+  <a href="#main-content" class="skip-link">İçeriğe atla</a>
+  <div class="grain"></div>
   <header class="topbar">
     <div class="brand">
       <span class="mark">HOLD<span class="b-out">OUT</span></span>
@@ -26,32 +28,36 @@
     </div>
   </header>
 
-  <main class="wrap">
+  <main id="main-content" class="wrap">
 
     <!-- ===== HERO: MVP COUNTDOWN ===== -->
-    <section class="hero-cd">
-      <span class="glow glow--lime"></span>
-      <div class="cd-main">
-        <div class="cd-label">⏳ MVP'ye kalan</div>
-        <div class="cd-days"><span id="cd-days">—</span><span class="cd-days-u">gün</span></div>
-        <div class="cd-clock">
-          <div class="cd-seg"><b id="cd-h">—</b><span>saat</span></div>
-          <div class="cd-seg"><b id="cd-m">—</b><span>dakika</span></div>
-          <div class="cd-seg"><b id="cd-s">—</b><span>saniye</span></div>
-        </div>
-        <div class="cd-target">🎯 Hedef tarih: <b id="mvp-date">—</b> · <span id="phase-now" class="phase-now">—</span></div>
+    <div class="bezel" style="animation: slideUp 1s var(--ease-spring) forwards;">
+      <div class="bezel-inner">
+        <section class="hero-cd">
+          <span class="glow glow--lime"></span>
+          <div class="cd-main">
+            <div class="cd-label">⏳ MVP'ye kalan</div>
+            <div class="cd-days"><span id="cd-days">—</span><span class="cd-days-u">gün</span></div>
+            <div class="cd-clock">
+              <div class="cd-seg"><b id="cd-h">—</b><span>saat</span></div>
+              <div class="cd-seg"><b id="cd-m">—</b><span>dakika</span></div>
+              <div class="cd-seg"><b id="cd-s">—</b><span>saniye</span></div>
+            </div>
+            <div class="cd-target">🎯 Hedef tarih: <b id="mvp-date">—</b> · <span id="phase-now" class="phase-now">—</span></div>
+          </div>
+          <div class="cd-ring">
+            <svg viewBox="0 0 160 160" width="160" height="160" aria-hidden="true">
+              <circle class="ring-bg" cx="80" cy="80" r="70" />
+              <circle id="ring-fg" class="ring-fg" cx="80" cy="80" r="70" transform="rotate(-90 80 80)" />
+            </svg>
+            <div class="ring-center">
+              <b id="ring-pct">0%</b>
+              <span>MVP ilerlemesi</span>
+            </div>
+          </div>
+        </section>
       </div>
-      <div class="cd-ring">
-        <svg viewBox="0 0 160 160" width="160" height="160" aria-hidden="true">
-          <circle class="ring-bg" cx="80" cy="80" r="70" />
-          <circle id="ring-fg" class="ring-fg" cx="80" cy="80" r="70" transform="rotate(-90 80 80)" />
-        </svg>
-        <div class="ring-center">
-          <b id="ring-pct">0%</b>
-          <span>MVP ilerlemesi</span>
-        </div>
-      </div>
-    </section>
+    </div>
 
     <!-- ===== STATS ===== -->
     <section class="block">

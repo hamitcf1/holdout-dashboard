@@ -5,12 +5,12 @@
    ============================================================ */
 
 const CONFIG = {
-  // --- Tarihler (YYYY-MM-DD) — bunları kendine göre düzenle ---
-  projectStart: "2026-05-01",   // projeye başlangıç
-  mvpTarget:    "2026-08-31",   // 🎯 MVP hedef tarihi (geri sayım buna)
-  launchTarget: "2026-09-30",   // App Store / Play lansman hedefi
+  // --- Tarihler (YYYY-MM-DD) ---
+  projectStart: "2026-05-01",
+  mvpTarget:    "2026-08-31",
+  launchTarget: "2026-09-30",
 
-  // --- Hedefler (current = şu anki değer, ilerledikçe güncelle) ---
+  // --- Hedefler ---
   goals: [
     { label: "Kullanıcı — 6. ay",     current: 0, target: 20000,  note: "İlk 6 ay hedefi (muhafazakâr senaryo)" },
     { label: "Kullanıcı — 12. ay",    current: 0, target: 100000, note: "12. ay hedefi (iyimser senaryo)" },
@@ -20,8 +20,7 @@ const CONFIG = {
     { label: "Premium dönüşüm",       current: 0, target: 5,      suffix: "%", note: "ödeme yapan kullanıcı oranı" }
   ],
 
-  // --- Yol haritası fazları (tek kaynak: hem görsel hem yazısal) ---
-  // mvp:true olan fazlar "MVP ilerlemesi" yüzdesine dahildir.
+  // --- Yol haritası fazları ---
   phases: [
     { name: "Faz 0 — Fikir & Doğrulama", short: "Faz 0\nFikir", start: "2026-05-01", end: "2026-05-31", mvp: true, tasks: [
       { t: "Fikir doğrulama", d: true },
@@ -95,7 +94,7 @@ function phaseStatus(p, now) {
   const allDone = p.tasks.length > 0 && p.tasks.every(t => t.d);
   if (allDone) return "done";
   if (now >= parse(p.start) && now <= parse(p.end)) return "active";
-  if (now > parse(p.end)) return "active"; // süresi geçti ama bitmedi
+  if (now > parse(p.end)) return "active"; 
   return "todo";
 }
 const tasksDone = (p) => p.tasks.filter(t => t.d).length;
@@ -106,49 +105,54 @@ function render() {
   const start = parse(CONFIG.projectStart);
   const mvp = parse(CONFIG.mvpTarget);
 
-  // today label
   document.getElementById("today").textContent = fmtDate(now);
   document.getElementById("mvp-date").textContent = fmtDate(mvp);
   document.getElementById("updated").textContent = fmtDate(now);
 
-  // active phase label
   const active = CONFIG.phases.find(p => phaseStatus(p, now) === "active") || CONFIG.phases[0];
   document.getElementById("phase-now").textContent = "Şu an: " + active.name.split(" — ")[0] + " (" + active.name.split(" — ")[1] + ")";
 
-  // MVP progress ring (mvp:true fazlar)
+  // MVP progress
   const mvpPhases = CONFIG.phases.filter(p => p.mvp);
   const mvpTotal = mvpPhases.reduce((a, p) => a + p.tasks.length, 0);
   const mvpDoneN = mvpPhases.reduce((a, p) => a + tasksDone(p), 0);
   const mvpPct = mvpTotal ? Math.round(mvpDoneN / mvpTotal * 100) : 0;
   const C = 2 * Math.PI * 70;
   const fg = document.getElementById("ring-fg");
-  fg.style.strokeDasharray = C;
-  fg.style.strokeDashoffset = C * (1 - mvpPct / 100);
+  if (fg) {
+    fg.style.strokeDasharray = C;
+    fg.style.strokeDashoffset = C * (1 - mvpPct / 100);
+  }
   document.getElementById("ring-pct").textContent = mvpPct + "%";
 
-  // stats
+  // stats (Bento asymmetric layout)
   const allTotal = CONFIG.phases.reduce((a, p) => a + p.tasks.length, 0);
   const allDoneN = CONFIG.phases.reduce((a, p) => a + tasksDone(p), 0);
   const elapsed = Math.max(0, daysBetween(start, now));
   const remain = Math.max(0, daysBetween(now, mvp));
   const milestones = CONFIG.phases.filter(p => phaseStatus(p, now) === "done").length;
   const f2 = CONFIG.phases.find(p => p.name.indexOf("Faz 2") === 0);
+  
   const stats = [
-    { v: elapsed, k: "Geçen gün (başlangıçtan)" },
-    { v: remain, k: "MVP'ye kalan gün", lime: true },
-    { v: allDoneN + "<small>/" + allTotal + "</small>", k: "Tamamlanan adım", raw: true },
-    { v: tasksDone(f2) + "<small>/" + f2.tasks.length + "</small>", k: "MVP geliştirme görevi", raw: true },
-    { v: milestones + "<small>/" + CONFIG.phases.length + "</small>", k: "Tamamlanan faz", raw: true },
-    { v: mvpPct + "<small>%</small>", k: "MVP ilerlemesi", raw: true, lime: true }
+    { v: elapsed, k: "Geçen gün (başlangıç)", span: 2 },
+    { v: remain, k: "MVP'ye kalan gün", lime: true, span: 2 },
+    { v: allDoneN + "<small>/" + allTotal + "</small>", k: "Tamamlanan adım", raw: true, span: 2 },
+    { v: tasksDone(f2) + "<small>/" + f2.tasks.length + "</small>", k: "MVP görevleri", raw: true, span: 3 },
+    { v: milestones + "<small>/" + CONFIG.phases.length + "</small>", k: "Tamamlanan faz", raw: true, span: 3 },
+    { v: mvpPct + "<small>%</small>", k: "MVP ilerlemesi", raw: true, lime: true, span: 6 }
   ];
-  document.getElementById("stats").innerHTML = stats.map(s =>
-    `<div class="stat"><div class="v ${s.lime ? "" : "muted"}">${s.raw ? s.v : s.v}</div><div class="k">${s.k}</div></div>`
+
+  document.getElementById("stats").innerHTML = stats.map((s, i) =>
+    `<div class="stat" style="grid-column: span ${s.span}; animation: slideUp 0.8s var(--ease-spring) forwards; animation-delay: ${i * 0.08}s; opacity: 0;">
+      <div class="v ${s.lime ? "" : "muted"}">${s.v}</div>
+      <div class="k">${s.k}</div>
+    </div>`
   ).join("");
 
   // goals
-  document.getElementById("goals").innerHTML = CONFIG.goals.map(g => {
+  document.getElementById("goals").innerHTML = CONFIG.goals.map((g, i) => {
     const pct = clamp(g.target ? g.current / g.target * 100 : 0, 0, 100);
-    return `<div class="goal">
+    return `<div class="goal" style="animation: slideUp 0.8s var(--ease-spring) forwards; animation-delay: ${0.4 + i * 0.08}s; opacity: 0;">
       <div class="goal-top"><span class="goal-label">${g.label}</span>
         <span class="goal-val">${fmtNum(g.current, g)} <i>/ ${fmtNum(g.target, g)}</i></span></div>
       <div class="goal-bar"><span style="width:${pct}%"></span></div>
@@ -156,7 +160,7 @@ function render() {
     </div>`;
   }).join("");
 
-  // timeline (visual)
+  // timeline
   const tEnd = parse(CONFIG.phases[CONFIG.phases.length - 1].end);
   const span = daysBetween(start, tEnd) || 1;
   const segHtml = CONFIG.phases.map(p => {
@@ -167,15 +171,19 @@ function render() {
   const todayPct = clamp(daysBetween(start, now) / span * 100, 0, 100);
   const mvpPctPos = clamp(daysBetween(start, mvp) / span * 100, 0, 100);
   const launchPctPos = clamp(daysBetween(start, parse(CONFIG.launchTarget)) / span * 100, 0, 100);
+  
   document.getElementById("timeline").innerHTML =
-    `<div class="tl-track">${segHtml}<div class="tl-today" style="left:${todayPct}%"></div></div>
-     <div class="tl-milestones">
+    `<div class="tl-track" style="animation: fadeIn 1.2s var(--ease-out) forwards; opacity: 0;">
+      ${segHtml}
+      <div class="tl-today" style="left:${todayPct}%"></div>
+    </div>
+     <div class="tl-milestones" style="animation: fadeIn 1.2s var(--ease-out) forwards; animation-delay: 0.6s; opacity: 0;">
        <span class="tl-ms" style="left:${mvpPctPos}%">🎯 <b>MVP</b> ${fmtDate(mvp)}</span>
        <span class="tl-ms" style="left:${launchPctPos}%">🚀 Lansman ${fmtDate(parse(CONFIG.launchTarget))}</span>
      </div>`;
 
-  // phases (textual)
-  document.getElementById("phases").innerHTML = CONFIG.phases.map(p => {
+  // phases
+  document.getElementById("phases").innerHTML = CONFIG.phases.map((p, i) => {
     const st = phaseStatus(p, now);
     const done = tasksDone(p), total = p.tasks.length;
     const pct = total ? Math.round(done / total * 100) : 0;
@@ -183,7 +191,8 @@ function render() {
     const items = p.tasks.map(t =>
       `<li class="${t.d ? "done" : ""}"><span class="box">${t.d ? "✓" : ""}</span><span>${t.t}</span></li>`
     ).join("");
-    return `<div class="phase ${st === "active" ? "is-active" : ""} ${st === "done" ? "is-done" : ""}">
+    return `<div class="phase ${st === "active" ? "is-active" : ""}" 
+      style="animation: slideUp 1s var(--ease-spring) forwards; animation-delay: ${0.8 + i * 0.12}s; opacity: 0;">
       <div class="phase-head">
         <span class="phase-name">${p.name}</span>
         <span class="phase-badge ${st}">${badge}</span>
