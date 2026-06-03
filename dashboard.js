@@ -73,7 +73,9 @@ const CONFIG = {
       { t: "React Query (4 sekme) + optimistic mutations → sekme geçişi anında", d: true },
       { t: "Güvenlik kilidi: RLS rol/kolon write, RPC execute grant, proofs bucket", d: true },
       { t: "Timezone fix (localDay) — gece check-in serisi bozulmuyor", d: true },
-      { t: "İptal/silme: çok adımlı yazılı onay (solo/quit; duel cancelDuel hazır)", d: true }
+      { t: "İptal/silme: çok adımlı yazılı onay (duel + solo + quit)", d: true },
+      { t: "Onboarding: Düello/Solo seçimi + solo uyarı adımı + solo oluşturma", d: true },
+      { t: "Auth: 6 haneli OTP kod girişi + davet akışı (token/code) onboarding", d: true }
     ]},
     { name: "Faz 3 — Yayın & Lansman", short: "Faz 3\nYayın", start: "2026-08-31", end: "2026-09-30", mvp: false, tasks: [
       { t: "App icon + marka varlıkları", d: true },
