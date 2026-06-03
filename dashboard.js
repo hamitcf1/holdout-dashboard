@@ -64,12 +64,16 @@ const CONFIG = {
       { t: "Premium UX: paywall + entitlement + grace + reklam kapısı + emoji paywall", d: true },
       { t: "RevenueCat dev-build (Test Store) canlı + paywall fix (çift-present/logIn)", d: true },
       { t: "Onboarding revamp (mechanic/why21/rules/paywall/söz-ver final + avatar seçici)", d: true },
-      { t: "i18n: 6 dil (TR/EN/RU/AZ/DE/FR) + cihaz dili + EN fallback", d: true },
+      { t: "i18n: MVP'de TR+EN (RU/AZ/DE/FR standby, EN fallback) + cihaz dili", d: true },
       { t: "Light mode temeli (dark/light/system + boot uygula)", d: true },
       { t: "13 yaş yasal sınırı (app içi)", d: true },
       // — Native his / performans —
       { t: "Native his: ripple+haptic, liste giriş animasyonu, swipe-back", d: true },
-      { t: "Loading azalt: kalıcı cache + skeleton'lar; FlatList (yorum/arama)", d: true }
+      { t: "Loading azalt: kalıcı cache + skeleton + FlatList (yorum/arama/feed)", d: true },
+      { t: "React Query (4 sekme) + optimistic mutations → sekme geçişi anında", d: true },
+      { t: "Güvenlik kilidi: RLS rol/kolon write, RPC execute grant, proofs bucket", d: true },
+      { t: "Timezone fix (localDay) — gece check-in serisi bozulmuyor", d: true },
+      { t: "İptal/silme: çok adımlı yazılı onay (solo/quit; duel cancelDuel hazır)", d: true }
     ]},
     { name: "Faz 3 — Yayın & Lansman", short: "Faz 3\nYayın", start: "2026-08-31", end: "2026-09-30", mvp: false, tasks: [
       { t: "App icon + marka varlıkları", d: true },
