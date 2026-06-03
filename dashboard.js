@@ -37,42 +37,63 @@ const CONFIG = {
       { t: "Design system & bileşen kütüphanesi", d: true }
     ]},
     { name: "Faz 2 — MVP Geliştirme", short: "Faz 2\nMVP", start: "2026-06-30", end: "2026-08-31", mvp: true, tasks: [
-      { t: "Giriş + auth (anonim/dev)", d: true },
-      { t: "Alışkanlık + duel oluşturma", d: true },
-      { t: "Check-in + realtime", d: true },
-      { t: "Davet linki (GitHub Pages)", d: true },
-      { t: "Navigasyon + Ana Sayfa — Faz A", d: true },
-      { t: "Duel detay zengin (dots, %, laf sokma, bahis) — Faz B", d: true },
-      { t: "Puan + sıralama + başarım + sonuç çözümü — Faz C", d: true },
-      { t: "Düello kanıtı (foto + saat damgası + not, Storage)", d: true },
+      // — Çekirdek —
+      { t: "Giriş + auth (anonim/dev) + magic-link deep link (otp_expired dahil)", d: true },
+      { t: "Düello oluşturma — multi-step (ne/hedef/süre/bahis)", d: true },
+      { t: "Check-in + realtime + kanıt foto (Storage)", d: true },
+      { t: "Davet linki + 4 haneli kod ile katılma", d: true },
+      { t: "Düello detay zengin (dots, %, laf sokma, bahis, bu-hafta toggle, rakip ismi)", d: true },
       { t: "Düello bitiş ekranı (ödül + paylaş + premium CTA)", d: true },
-      { t: "İstatistik + Profil — Faz D", d: true },
-      { t: "Onboarding akışı — Faz E", d: true },
-      { t: "Push bildirimleri (local hatırlatma) — Faz E", d: true },
-      { t: "Premium UX: paywall + entitlement + grace + reklam kapısı (mock satın alma)", d: true },
-      { t: "i18n: 6 dil tam çeviri (TR/EN/RU/AZ/DE/FR), cihaz diline göre + EN fallback", d: true },
-      { t: "Solo habit tracker (tekrarlayan, 'Bugün' bölümü)", d: true },
-      { t: "Bırakma/sobriety modu (temiz sayaç + relapse + kilometre taşı)", d: true }
+      { t: "İstatistik + Profil + streak (geçmiş+gelecek hafta)", d: true },
+      // — Solo / Quit —
+      { t: "Solo habit REWORK: detay ekranı + multi-step create + preset picker", d: true },
+      { t: "Bırakma/sobriety: temiz sayaç + relapse + kilometre taşı + preset picker", d: true },
+      { t: "Quantity hedef + manuel input + birim seçimi + hedefte cap'leme", d: true },
+      { t: "Per-habit destek/bilgi sayfaları (fayda + ipucu + 'bir daha gösterme')", d: true },
+      { t: "Home birleşik 'Bugün' listesi (düello + solo + quit)", d: true },
+      // — Gamification —
+      { t: "Puan motoru (ledger + trigger, geri-alınabilir) + Home puan + PointsBurst", d: true },
+      { t: "Haftalık ligler (5 tier, lazy terfi/düşme) + terfi paylaşımı", d: true },
+      { t: "Görevler (Quests): günlük + aylık, ilerleme + ödül talep", d: true },
+      // — Sosyal —
+      { t: "Sosyal feed: başarım → paylaşım prompt'u + post/beğeni/yorum", d: true },
+      { t: "Kullanıcı arama + username + public profil", d: true },
+      { t: "Arkadaşlık (istek/kabul) + Herkes↔Arkadaşlar lig filtresi", d: true },
+      // — Sistem —
+      { t: "Local motivasyon bildirimleri + ayarlar (tür bazlı)", d: true },
+      { t: "Premium UX: paywall + entitlement + grace + reklam kapısı + emoji paywall", d: true },
+      { t: "RevenueCat dev-build (Test Store) canlı + paywall fix (çift-present/logIn)", d: true },
+      { t: "Onboarding revamp (mechanic/why21/rules/paywall/söz-ver final + avatar seçici)", d: true },
+      { t: "i18n: 6 dil (TR/EN/RU/AZ/DE/FR) + cihaz dili + EN fallback", d: true },
+      { t: "Light mode temeli (dark/light/system + boot uygula)", d: true },
+      { t: "13 yaş yasal sınırı (app içi)", d: true },
+      // — Native his / performans —
+      { t: "Native his: ripple+haptic, liste giriş animasyonu, swipe-back", d: true },
+      { t: "Loading azalt: kalıcı cache + skeleton'lar; FlatList (yorum/arama)", d: true }
     ]},
     { name: "Faz 3 — Yayın & Lansman", short: "Faz 3\nYayın", start: "2026-08-31", end: "2026-09-30", mvp: false, tasks: [
-      { t: "🔴 FK/profil giriş bug'ı + tüm migration'lar (prod Supabase)", d: false },
       { t: "App icon + marka varlıkları", d: true },
-      { t: "RevenueCat gerçek ödeme (iskelet ✅: purchases.ts + webhook) → SDK+hesap kaldı", d: false },
-      { t: "AdMob (gerçek reklam) + ATT / consent", d: false },
+      { t: "Light mode cila (inline overlay'ler palete bağlı)", d: false },
+      { t: "RevenueCat gerçek ödeme (Apple $99 / Google $25 + store ürünleri)", d: false },
+      { t: "AdMob (gerçek reklam) + reklam→ödül ekranı + ATT/consent", d: false },
       { t: "Apple/Google giriş + hesap silme (Apple zorunlu)", d: false },
-      { t: "EAS prod build + Apple/Google developer hesapları", d: false },
-      { t: "Remote push (APNs/FCM) + deep link (Universal/App Links)", d: false },
+      { t: "EAS prod build + developer hesapları", d: false },
+      { t: "Remote push (APNs/FCM)", d: false },
       { t: "Store görselleri + ASO + gizlilik etiketi/Data Safety + EULA", d: false },
+      { t: "Web: 13-yaş/gizlilik + sosyal medya marka kiti (holdout sitesi)", d: false },
       { t: "Beta (TestFlight / Play internal) → submit", d: false },
       { t: "Lansman post serisi + Product Hunt → ilk 100 kullanıcı", d: false }
     ]},
     { name: "Faz 4 — MVP Sonrası", short: "Faz 4\nSonrası", start: "2026-09-30", end: "2026-12-31", mvp: false, tasks: [
+      { t: "Avatar (emoji bedava / premium kilitli + foto premium)", d: true },
+      { t: "Sosyal & Lig (akış + lig + arkadaşlık + yorum)", d: true },
+      { t: "Cihaz senkronu (HealthKit/Health Connect) — adım/su", d: false },
+      { t: "Oransal puan + öne-geçme bonusu", d: false },
+      { t: "Market / loot box (puan harcama)", d: false },
+      { t: "Per-habit soru adımları (kaç sigara/uyanma saati) + premium habitler (screen time/kalori)", d: false },
+      { t: "Doomscroll motivasyon akışı", d: false },
       { t: "Uygulama kilidi (Screen Time, iOS) 🚀", d: false },
-      { t: "Sayısal challenge modları (su/adım/tekrar, bahisli) ✅ — cihaz senkronu (HealthKit/Health Connect) kaldı", d: false },
-      { t: "Derin başarım/ödül sistemi", d: false },
-      { t: "Avatar (emoji bedava / foto premium)", d: true },
-      { t: "Sosyal & Lig (akış + lig birleşik, bedava; podyum/tier/beğeni)", d: true },
-      { t: "Challenge takip (manuel log bedava); cihaz senkronu premium → HealthKit kaldı", d: true }
+      { t: "Maskot + tutorial", d: false }
     ]}
   ]
 };
