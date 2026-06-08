@@ -30,9 +30,9 @@ const CONFIG = {
     ]},
     { name: "Faz 1 — Hazırlık & Tasarım", short: "Faz 1\nHazırlık", start: "2026-05-31", end: "2026-06-30", mvp: true, tasks: [
       { t: "Pazarlama websitesi (canlı)", d: true },
-      { t: "Mobbin araştırması (onboarding/paywall)", d: false },
-      { t: "Figma ekran tasarımları", d: false },
-      { t: "Developer hesapları (Apple/Google)", d: false },
+      { t: "Mobbin araştırması (onboarding/paywall)", d: true },
+      { t: "Figma ekran tasarımları", d: true },
+      { t: "Developer hesapları (Apple/Google)", d: true },
       { t: "Supabase şemasını finalize et", d: true },
       { t: "Design system & bileşen kütüphanesi", d: true }
     ]},
@@ -67,6 +67,7 @@ const CONFIG = {
       { t: "i18n: MVP'de TR+EN (RU/AZ/DE/FR standby, EN fallback) + cihaz dili", d: true },
       { t: "Light mode temeli (dark/light/system + boot uygula)", d: true },
       { t: "13 yaş yasal sınırı (app içi)", d: true },
+      { t: "i18n: TR+EN tam parite ve kopya-key temizliği tamamlandı", d: true },
       // — Native his / performans —
       { t: "Native his: ripple+haptic, liste giriş animasyonu, swipe-back", d: true },
       { t: "Loading azalt: kalıcı cache + skeleton + FlatList (yorum/arama/feed)", d: true },
